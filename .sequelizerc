@@ -1,0 +1,11 @@
+// 設定變數資料夾
+require('@babel/register');
+
+const path = require('path');
+
+module.exports = {
+    'config':path.resolve(__dirname, './src/config/config.json'),
+    'migrations-path':path.resolve(__dirname, './src/databases/migrations/'),
+    'module-path':path.resolve(__dirname, './src/models/'),
+    'seeders-path':path.resolve(__dirname, './src/databases/seeders/')
+}
