@@ -1,30 +1,34 @@
-
 export async function up(queryInterface, Sequelize){
-    await queryInterface.createTable('response',{
+    await queryInterface.createTable('resume',{
         id:{
             type:Sequelize.UUID,
             primaryKey:true,
         },
-        context:{
-            type:Sequelize.TEXT,
+        name:{
+            type:Sequelize.STRING,
         },
         images:{
             type:Sequelize.PATH,
         },
-        bestanswer:{
-            type:Sequelize.BOOLEAN,
+        autobiography:{
+            type:Sequelize.STRING,
         },
-        createdAT:{
+        skill:{
+            type:Sequelize.STRING,
+        },
+        work:{
+            type:Sequelize.STRING,
+        },
+        education:{
+            type:Sequelize.STRING,
+        },
+        createAT:{
             type:Sequelize.DATE,
             allowNull:false,
         },
-        updatedAT:{
+        updateAT:{
             type:Sequelize.DATE,
             allowNull:false,
-        },
-        articles_id:{
-            type:Sequelize.UUID,
-            foreignKey:true,
         },
         user_id:{
             type:Sequelize.UUID,
@@ -34,5 +38,5 @@ export async function up(queryInterface, Sequelize){
 }
 
 export async function down(queryInterface, Sequelize){
-    await queryInterface.dropTable('response');
+    await queryInterface.dropTable('resume');
 }

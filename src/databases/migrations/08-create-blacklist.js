@@ -1,33 +1,27 @@
 export async function up(queryInterface, Sequelize){
-    await queryInterface.createTable('articles',{
-        articles_id:{
+    await queryInterface.createTable('blacklist',{
+        id:{
             type:Sequelize.UUID,
             primaryKey:true,
         },
-        context:{
-            type:Sequelize.TEXT,
-        },
-        tag:{
+        reason:{
             type:Sequelize.STRING,
         },
-        response:{
-            type:Sequelize.ARRRAY(Sequelize.UUID),
-        },
-        createdAT:{
+        banAT:{
             type:Sequelize.DATE,
             allowNull:false,
         },
-        updatedAT:{
+        unbanAT:{
             type:Sequelize.DATE,
             allowNull:false,
         },
         user_id:{
             type:Sequelize.UUID,
-            primaryKey:true,
-        }
+            foreignKey:true,
+        },
     })
 }
 
 export async function down(queryInterface, Sequelize){
-    await queryInterface.dropTable('articles');
+    await queryInterface.dropTable('blacklist');
 }

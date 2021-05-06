@@ -1,19 +1,11 @@
 export async function up(queryInterface, Sequelize){
     await queryInterface.createTable('levels',{
-        User_id:{
+        user_id:{
             type:Sequelize.UUID,
-            primaryKey:true,
+            foreignKey:true,
         },
-        name:{
-            type:Sequelize.STRING,
-        },
-        title:{
-            type:Sequelize.ARRAY(Sequelize.STRING),
-            allowNull:true,
-        },
-        point:{
+        exp:{
             type:Sequelize.INTEGER,
-            allowNull:false,
         },
         level:{
             type:Sequelize.INTEGER,

@@ -18,8 +18,11 @@ export async function up(queryInterface, Sequelize){
         phone:{
             type:Sequelize.INTEGER,
         },
+        birth:{
+            type:Sequelize.DATE,
+        },
         icon:{
-            typr:Sequelize.STRING,
+            type:Sequelize.PATH,
         },
         email_verified:{
             type:Sequelize.DATE,

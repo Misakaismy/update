@@ -1,7 +1,6 @@
-
 export async function up(queryInterface, Sequelize){
-    await queryInterface.createTable('response',{
-        id:{
+    await queryInterface.createTable('articles',{
+        articles_id:{
             type:Sequelize.UUID,
             primaryKey:true,
         },
@@ -11,8 +10,8 @@ export async function up(queryInterface, Sequelize){
         images:{
             type:Sequelize.PATH,
         },
-        bestanswer:{
-            type:Sequelize.BOOLEAN,
+        tag:{
+            type:Sequelize.STRING,
         },
         createdAT:{
             type:Sequelize.DATE,
@@ -22,17 +21,13 @@ export async function up(queryInterface, Sequelize){
             type:Sequelize.DATE,
             allowNull:false,
         },
-        articles_id:{
-            type:Sequelize.UUID,
-            foreignKey:true,
-        },
         user_id:{
             type:Sequelize.UUID,
             foreignKey:true,
-        },
+        }
     })
 }
 
 export async function down(queryInterface, Sequelize){
-    await queryInterface.dropTable('response');
+    await queryInterface.dropTable('articles');
 }
