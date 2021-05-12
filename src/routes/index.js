@@ -5,8 +5,8 @@ import log from './log';
 
 const router = Router();
 
-router.use('/user', user);
+// router.use('/user', user);
 router.use('/activity', activity)
-router.use('/', log);
+router.use('/user', log);
 
 export default router;

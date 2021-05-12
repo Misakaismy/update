@@ -8,7 +8,7 @@ export async function up(queryInterface, Sequelize){
             type:Sequelize.STRING,
         },
         images:{
-            type:Sequelize.PATH,
+            type:Sequelize.STRING,
         },
         autobiography:{
             type:Sequelize.STRING,

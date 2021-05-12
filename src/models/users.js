@@ -6,7 +6,6 @@ export default (sequelize, DataTypes)=>{
     {
         user_id:{
             type:DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
         },
         email: {
@@ -20,6 +19,9 @@ export default (sequelize, DataTypes)=>{
             type:DataTypes.STRING,
         },
         phone:{
+            type:DataTypes.STRING,
+        },
+        birth:{
             type:DataTypes.STRING,
         },
         icon:{

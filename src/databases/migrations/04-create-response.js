@@ -9,7 +9,7 @@ export async function up(queryInterface, Sequelize){
             type:Sequelize.TEXT,
         },
         images:{
-            type:Sequelize.PATH,
+            type:Sequelize.STRING,
         },
         bestanswer:{
             type:Sequelize.BOOLEAN,

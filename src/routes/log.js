@@ -9,9 +9,9 @@ const router = Router();
 // });
 
 //or
-router.post('/login', userServer.Authenticate, log.login);
-router.get('/register', log.register);
-router.post('/remove_user', userServer.jwtAuthenticate, log.remove_user)
-router.post('/update_user', userServer.jwtAuthenticate, log.update_user)
+router.post('/', userServer.registerAuthenticate,log.register);
+router.get('/', userServer.Authenticate,log.login);
+router.delete('/', userServer.jwtAuthenticate, log.remove_user)
+router.patch('/', userServer.jwtAuthenticate, log.update_user)
 
 export default router;

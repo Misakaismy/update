@@ -51,4 +51,17 @@ const calcExpireTime = (payload)=>{
     return true;
 }
 
+passport.use('register',new LocalStrategy({
+    usernameField:'email',
+    passwordField:'password'
+    }, async(email, password, callback)=>{
+        const user = await userServer.getuser(email);
+        if (!user) {
+            // 第一個是傳直、第二個成功與否、三是flash message
+            // return callback(null, false, { message: '信箱錯誤' });
+            return callback({status: 200,message:'沒有人註冊!'},false)
+        }
+        return callback(null, user);
+}))
+
 export default passport;

@@ -3,6 +3,7 @@ export async function up(queryInterface, Sequelize){
     await queryInterface.createTable('users',{
         user_id:{
             type:Sequelize.UUID,
+            defaultValue: true,
             primaryKey:true,
         },
         email:{
@@ -13,16 +14,16 @@ export async function up(queryInterface, Sequelize){
             type:Sequelize.STRING(60),
         },
         name:{
-            type:Sequelize.STRING,
+            type:Sequelize.STRING(20),
         },
         phone:{
-            type:Sequelize.INTEGER,
+            type:Sequelize.STRING(10),
         },
         birth:{
-            type:Sequelize.DATE,
+            type:Sequelize.STRING,
         },
         icon:{
-            type:Sequelize.PATH,
+            type:Sequelize.STRING,
         },
         email_verified:{
             type:Sequelize.DATE,
