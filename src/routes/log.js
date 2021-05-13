@@ -9,8 +9,9 @@ const router = Router();
 // });
 
 //or
-router.post('/', userServer.registerAuthenticate,log.register);
-router.get('/', userServer.Authenticate,log.login);
+router.post('/', log.register);
+router.get('/', userServer.Authenticate);
+router.get(`/id`, log.login);
 router.delete('/', userServer.jwtAuthenticate, log.remove_user)
 router.patch('/', userServer.jwtAuthenticate, log.update_user)
 

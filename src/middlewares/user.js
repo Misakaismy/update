@@ -21,20 +21,6 @@ class userMiddleware{
         })(req, res, next);
     }
 
-    registerAuthenticate = async (req, res, next)=>{
-        passport.authenticate('register', {session:false},async (err, user)=>{
-            if(err){
-                const {status, message} = err;
-                res.status(status).json({message});
-                return;
-            }
-            // if(!user){
-            //     return res.status(400).json({message:`找尋不到該用戶!${user}`});
-            // }
-            return res.status(404).json({message:`已有人註冊!`});
-        })(req, res, next);
-    }
-
     // 解密
     decodeToken = (token)=>{
         try{
